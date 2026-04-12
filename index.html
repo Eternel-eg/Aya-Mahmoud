@@ -36,7 +36,7 @@
 
   /* 1. INTRO & OUTRO TEXT */
   .sub-text {
-    color: #e5c175;
+    color: #9daa86;
     font-size: 1.9cqh;
     margin: 0;
     font-family: 'Cormorant Garamond', serif;
@@ -48,7 +48,7 @@
 
   /* 2. MAIN NAMES */
   .main-names {
-    color: #e5c175;
+    color: #9daa86;
     font-size: 5.0cqh;
     margin: 0;
     gap: 0.4cqh;
@@ -69,7 +69,7 @@
 
   /* 3. THE AMPERSAND (&) */
   .amp {
-    color: #e5c175;
+    color: #9daa86;
     font-size: 1.4em;
     font-family: 'Great Vibes', cursive;
     text-transform: none;
@@ -81,7 +81,7 @@
 
   /* 4. DATE TEXT */
   .date-header {
-    color: #e5c175;
+    color: #9daa86;
     font-size: 2.0cqh;
     margin: 0;
     font-family: 'Marcellus SC', serif;
@@ -93,7 +93,7 @@
 
   /* 5. YEAR */
   .date-year {
-    color: #e5c175;
+    color: #9daa86;
     font-size: 4.5cqh;
     margin: 0;
     font-family: 'Marcellus SC', serif;
@@ -104,7 +104,7 @@
 
   /* 6. TIME */
   .date-time {
-    color: #e5c175;
+    color: #9daa86;
     font-size: 1.9cqh;
     margin: 0;
     font-family: 'Cormorant Garamond', serif;
@@ -116,7 +116,7 @@
 
   /* 7. VENUE LOCATION */
   .venue-location {
-    color: #e5c175;
+    color: #9daa86;
     font-size: 1.75cqh;
     margin: 0;
     font-family: 'Cormorant Garamond', serif;
@@ -317,7 +317,7 @@
   }
 
   @keyframes textGlow {
-    0%, 100% { text-shadow: 1px 1px 5px rgba(0,0,0,0.6), 0 0 2px rgba(229,193,117,0.0); color: #e5c175; }
+    0%, 100% { text-shadow: 1px 1px 5px rgba(0,0,0,0.6), 0 0 2px rgba(229,193,117,0.0); color: #9daa86; }
     50% { text-shadow: 1px 1px 5px rgba(0,0,0,0.6), 0 0 15px rgba(229,193,117,0.8), 0 0 25px rgba(229,193,117,0.5); color: #fff8eb; }
   }
 
@@ -337,7 +337,7 @@
     width: 25%; 
     max-width: 140px; 
     height: 1px; 
-    background: linear-gradient(to right, transparent, #e5c175, transparent); 
+    background: linear-gradient(to right, transparent, #9daa86, transparent); 
     flex-shrink: 0; 
     transform-origin: center;
     margin: 0;
@@ -397,7 +397,7 @@
     font-size: clamp(0.75rem, 1.8vw, 0.95rem);
     font-weight: 500;
     letter-spacing: .15em;
-    color: #e5c175;
+    color: #9daa86;
     text-transform: uppercase;
     cursor: pointer;
     opacity: 0;
@@ -496,9 +496,9 @@
     content: ''; position: absolute; inset: 9px;
     border: 1px solid rgba(180,148,90,0.18); border-radius: 1px; pointer-events: none;
   }
-  .modal-title { font-family:'Parisienne',serif; font-size: clamp(2rem,8vw,2.6rem); color:#e5c175; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.05em; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
+  .modal-title { font-family:'Parisienne',serif; font-size: clamp(2rem,8vw,2.6rem); color:#9daa86; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.05em; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
   .modal-sub   { font-family:'Cormorant Garamond',serif; font-size: clamp(0.9rem,2.5vw,1.1rem); letter-spacing:.15em; color:#cca550; text-transform:uppercase; margin-bottom:18px; font-weight:500; }
-  .modal-rule  { width:70px; height:1px; background:linear-gradient(to right,transparent,#e5c175,transparent); margin:0 auto 20px; }
+  .modal-rule  { width:70px; height:1px; background:linear-gradient(to right,transparent,#9daa86,transparent); margin:0 auto 20px; }
 
   .rsvp-form { display:flex; flex-direction:column; gap:12px; text-align:left; }
   .rsvp-form input, .rsvp-form select {
@@ -667,13 +667,12 @@
         
         <div class="rule"></div>
         
-        <div class="date-header">SATURDAY, 6TH of June</div>
+        <div class="date-header">06 - 06 - 2026</div>
         
-        <div class="date-year">2026</div>
+    
         
         <div class="date-time italic">at 7:00 PM</div>
         
-        <!-- New Location Added Here (fixed non-standard tag) -->
         <div class="venue-location">Le Méridien Cairo Airport <br> Lotus Ballroom</div>
         
         <div class="rule"></div>
@@ -713,7 +712,7 @@
   <div class="modal-box">
     <span class="modal-close" onclick="closeModal('rsvp')">✕ Close</span>
     <div class="modal-title">RSVP</div>
-    <div class="modal-sub">Kindly reply by May 1st, 2026</div>
+    <div class="modal-sub">Your presence Is Really Matter</div>
     <div class="modal-rule"></div>
     <div class="rsvp-form" id="rsvpForm">
       <input type="text" placeholder="Your Full Name" id="rsvpName" required>
@@ -757,9 +756,8 @@
   </div>
 </div>
 
-<audio id="bgMusic" loop preload="auto">
-  <source src="music1.mp3" type="audio/mpeg">
-</audio>
+<!-- REMOVED THE <SOURCE> TAG SO IT ONLY LOADS VIA JAVASCRIPT FETCH NOW -->
+<audio id="bgMusic" loop></audio>
 
 <div id="musicPlayer">
   <button id="musicBtn" onclick="toggleMusic()" title="Toggle Music" aria-label="Toggle Music">
@@ -979,8 +977,6 @@
     // ✨ PASTE YOUR GOOGLE APPS SCRIPT URL HERE ✨
     const scriptURL = 'GOOGLE APPS SCRIPT URL HERE'; 
 
-  
-
     const formData = new FormData();
     formData.append('name', name);
     formData.append('attend', attend);
@@ -1039,7 +1035,6 @@
   // ─── Asset Preloader ─────────────────────────────────────────────────────
   // Tracks: image1, image2, image3, image4, audio (5 assets = 20% each)
   // The loading screen stays visible until every single asset is ready.
-  // A hard 10-second timeout ensures it always clears even on slow networks.
 
   var loadingBar   = document.getElementById('loadingBar');
   var assetsTotal  = 5;   // 4 images + 1 audio
@@ -1069,18 +1064,61 @@
     img.src = src;
   });
 
-  // Audio ready
-  music.addEventListener('canplaythrough', assetReady, { once: true });
+  // 🌟 FORCE MUSIC PRELOAD VIA FETCH 🌟
+  // Mobile browsers strictly block standard <audio> preloading to save data.
+  // We fetch the entire file as a Blob first — once response.blob() resolves,
+  // the COMPLETE file is already in device memory, so we mark it ready immediately.
+  // This guarantees zero buffering delay when the user taps to play.
+  fetch('music1.mp3')
+    .then(function(response) {
+      if (!response.ok) throw new Error("Audio fetch failed");
+      return response.blob(); // ← entire MP3 is in memory once this resolves
+    })
+    .then(function(blob) {
+      var audioUrl = URL.createObjectURL(blob);
+      music.src = audioUrl;
+      music.load();
+      // The full file is already in RAM — no need to wait for canplaythrough.
+      // Mark ready right away so the loading screen can dismiss.
+      if (!music.dataset.loaded) {
+        music.dataset.loaded = 'true';
+        assetReady();
+      }
+    })
+    .catch(function(error) {
+      // fetch was blocked (some browsers/networks restrict it) — fall back to
+      // standard streaming and wait for enough data to play without interruption.
+      console.warn("Audio pre-fetch blocked or failed, falling back to streaming.", error);
+      music.src = 'music1.mp3';
+      music.preload = 'auto';
 
-  // Hard fallback: reveal after 10 s no matter what (slow network / blocked audio)
+      function markLoaded() {
+        if (!music.dataset.loaded) {
+          music.dataset.loaded = 'true';
+          assetReady();
+        }
+      }
+
+      music.addEventListener('canplaythrough', function onReady() {
+        music.removeEventListener('canplaythrough', onReady);
+        markLoaded();
+      });
+
+      // Streaming fallback timeout — 12 s is generous for most mobile connections
+      setTimeout(markLoaded, 12000);
+    });
+
+  // Hard safety net: if ANY asset is still pending after 35 s, reveal anyway
+  // so guests are never stuck on the loading screen indefinitely.
   setTimeout(function() {
     if (assetsLoaded < assetsTotal) {
       assetsLoaded = assetsTotal;
       loadingBar.style.width = '100%';
       revealInvitation();
     }
-  }, 10000);
+  }, 35000);
 
+  // Audio will automatically play as soon as the user taps anywhere to open the envelope
   document.addEventListener('click', function autoPlay() {
     if (!musicPlaying) {
       music.play().then(() => {
