@@ -4,7 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Aya & Mahmoud — Wedding Invitation</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Pinyon+Script&family=Cinzel:wght@300;400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  🔤 FONT GUIDE — swap any family name to change the look    ║
+  ║                                                              ║
+  ║  NAMES (main-names):  "Bodoni Moda"  ← ultra-luxury serif   ║
+  ║     Alternatives:     "Playfair Display"  "Cormorant Garamond" ║
+  ║                                                              ║
+  ║  AMPERSAND (amp):     "Great Vibes"  ← flowing script       ║
+  ║     Alternatives:     "Pinyon Script"  "Alex Brush"         ║
+  ║                                                              ║
+  ║  DATES / YEAR:        "Marcellus SC" ← refined small-caps   ║
+  ║     Alternatives:     "Cinzel"  "Cormorant SC"              ║
+  ║                                                              ║
+  ║  BODY TEXT:           "Cormorant Garamond" ← stays the same ║
+  ╚══════════════════════════════════════════════════════════════╝
+-->
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Great+Vibes&family=Marcellus+SC&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
 <style>
   /* =====================================================================
      🌟 EASY EDIT: TEXT COLORS, SIZES, AND POSITIONS 🌟
@@ -22,16 +38,19 @@
     text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
   }
 
-  /* 2. MAIN NAMES */
+  /* 2. MAIN NAMES
+        ↳ font-size: increase/decrease the cqh number (e.g. 7cqh = bigger)
+        ↳ font-family: swap "Bodoni Moda" for any font in the FONT GUIDE above
+        ↳ letter-spacing: 0.12em = tight · 0.2em = airy · 0.05em = very tight */
   .main-names {
     color: #e5c175;
-    font-size: 6.2cqh;   /* 6.2% of card height */
+    font-size: 6.8cqh;   /* 6.8% of card height */
     margin: 0;
     gap: 0.5vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Bodoni Moda', serif;
     text-transform: uppercase;
     font-weight: 400;
     line-height: 1;
@@ -43,11 +62,13 @@
     display: inline-block;
   }
 
-  /* 3. THE AMPERSAND (&) */
+  /* 3. THE AMPERSAND (&)
+        ↳ font-size: 1.44em = relative to .main-names size · increase for drama
+        ↳ swap "Great Vibes" for "Pinyon Script" or "Alex Brush" */
   .amp {
     color: #e5c175;
-    font-size: 1.44em;
-    font-family: 'Pinyon Script', cursive;
+    font-size: 1.5em;
+    font-family: 'Great Vibes', cursive;
     text-transform: none;
     line-height: 1;
     font-weight: 400;
@@ -55,26 +76,31 @@
     display: inline-block;
   }
 
-  /* 4. DATE TEXT */
+  /* 4. DATE TEXT
+        ↳ font-size: 2.5cqh = small · 3.5cqh = larger
+        ↳ letter-spacing: 0.25em = spaced · 0.1em = tighter
+        ↳ swap "Marcellus SC" for "Cinzel" or "Cormorant SC" */
   .date-header {
     color: #e5c175;
     font-size: 2.5cqh;   /* 2.5% of card height */
     margin: 0;
-    font-family: 'Cinzel', serif;
+    font-family: 'Marcellus SC', serif;
     text-transform: uppercase;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.2em;
     font-weight: 400;
     text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
   }
 
-  /* 5. YEAR */
+  /* 5. YEAR
+        ↳ font-size: 5.2cqh · increase for a more dramatic year display
+        ↳ uses Bodoni Moda to match the names — swap if needed */
   .date-year {
     color: #e5c175;
-    font-size: 5.2cqh;   /* 5.2% of card height */
+    font-size: 5.5cqh;   /* slightly larger for drama */
     margin: 0;
-    font-family: 'Cinzel', serif;
+    font-family: 'Marcellus SC', serif;
     font-weight: 400;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.2em;
     text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
   }
 
@@ -211,9 +237,19 @@
    * Using position:absolute means top/left/right/bottom are % of the
    * container's HEIGHT and WIDTH respectively — exactly what we need.
    */
+  /*
+   * HOW TO MOVE TEXT UP OR DOWN:
+   * ─────────────────────────────────────────────────
+   * Change the `top` value below.
+   * • 21% = original position
+   * • 16% = 5% higher  ← current setting
+   * • 26% = 5% lower
+   * The `bottom` value keeps the lower boundary in place.
+   * ─────────────────────────────────────────────────
+   */
   .card-content {
     position: absolute;
-    top: 21%;     /* just below the wax stamp */
+    top: 16%;     /* ← moved 5% up (was 21%) */
     bottom: 10%;  /* above the bottom decorative border */
     left: 8%;
     right: 8%;
@@ -478,7 +514,7 @@
     content: ''; position: absolute; inset: 9px;
     border: 1px solid rgba(180,148,90,0.18); border-radius: 1px; pointer-events: none;
   }
-  .modal-title { font-family:'Playfair Display',serif; font-size: clamp(2rem,8vw,2.6rem); color:#e5c175; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.05em; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
+  .modal-title { font-family:'Bodoni Moda',serif; font-size: clamp(2rem,8vw,2.6rem); color:#e5c175; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.05em; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
   .modal-sub   { font-family:'Cormorant Garamond',serif; font-size: clamp(0.9rem,2.5vw,1.1rem); letter-spacing:.15em; color:#cca550; text-transform:uppercase; margin-bottom:18px; font-weight:500; }
   .modal-rule  { width:70px; height:1px; background:linear-gradient(to right,transparent,#e5c175,transparent); margin:0 auto 20px; }
 
@@ -521,7 +557,7 @@
   .rsvp-thanks { display:none; flex-direction:column; align-items:center; gap:10px; padding:10px 0; }
   .rsvp-thanks.show { display:flex; }
   .rsvp-thanks .ty-icon { font-size:2.5rem; color:#cca550; }
-  .rsvp-thanks .ty-text { font-family:'Playfair Display',serif; font-size: clamp(1.6rem,6vw,2.2rem); color:#cca550; text-transform:uppercase; letter-spacing:0.05em; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
+  .rsvp-thanks .ty-text { font-family:'Bodoni Moda',serif; font-size: clamp(1.6rem,6vw,2.2rem); color:#cca550; text-transform:uppercase; letter-spacing:0.05em; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
   .rsvp-thanks .ty-sub  { font-family:'Cormorant Garamond',serif; font-size: clamp(0.9rem,2vw,1rem); letter-spacing:.15em; color:#9a7848; text-transform:uppercase; }
 
   /* ── Mobile adjustments ── */
@@ -534,7 +570,17 @@
     }
   }
 
-  .loading-logo { width: clamp(80px, 20vw, 140px); height: clamp(80px, 20vw, 140px); object-fit: contain; opacity: 0.92; margin-bottom: 4px; }
+  /*
+   * HOW TO RESIZE THE LOGO:
+   * ─────────────────────────────────────────────────
+   * clamp(MIN, PREFERRED, MAX)
+   * • MIN   = smallest size on tiny screens
+   * • PREFERRED = scales with viewport width (vw)
+   * • MAX   = largest it will ever grow
+   * Current: 130px → 200px  (was 80px → 140px)
+   * ─────────────────────────────────────────────────
+   */
+  .loading-logo { width: clamp(130px, 28vw, 200px); height: clamp(130px, 28vw, 200px); object-fit: contain; opacity: 0.92; margin-bottom: 4px; }
 
   /* ═══ LOADING SCREEN ═══ */
   #loadingScreen {
@@ -542,7 +588,7 @@
     z-index: 99999; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px; transition: opacity 0.8s ease;
   }
   #loadingScreen.fade-out { opacity: 0; pointer-events: none; }
-  .loading-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 8vw, 4rem); text-transform: uppercase; color: #cca550; line-height: 1; letter-spacing: 0.05em; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
+  .loading-title { font-family: 'Bodoni Moda', serif; font-size: clamp(2.2rem, 8vw, 4rem); text-transform: uppercase; color: #cca550; line-height: 1; letter-spacing: 0.05em; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
   .loading-sub { font-family: 'Cormorant Garamond', serif; font-size: clamp(0.9rem, 2.5vw, 1.1rem); letter-spacing: .25em; font-weight: 500; color: #a68440; text-transform: uppercase; }
   .loading-bar-wrap { width: 160px; height: 1px; background: rgba(180,148,90,0.2); border-radius: 2px; overflow: hidden; }
   .loading-bar { height: 100%; width: 0%; background: linear-gradient(to right, #cca550, #f0deba, #cca550); border-radius: 2px; transition: width 0.3s ease; }
