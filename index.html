@@ -32,15 +32,9 @@
      Content box is locked to:
        Left & Right : 20.3% each  →  content width  = 59.4% of card
        Top & Bottom : 20.6% each  →  content height = 58.8% of card
-
-     HOW TO ADJUST TEXT POSITION:
-       ↳ Edit .card-content below
-       ↳ top: 20.6%  →  lower number = text moves UP
-       ↳ left: 20.3% →  lower number = wider left margin
      ===================================================================== */
 
-  /* 1. INTRO & OUTRO TEXT
-        ↳ font-size: 1.9cqh = current · raise = bigger · lower = smaller */
+  /* 1. INTRO & OUTRO TEXT */
   .sub-text {
     color: #e5c175;
     font-size: 1.9cqh;
@@ -52,9 +46,7 @@
     text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
   }
 
-  /* 2. MAIN NAMES
-        ↳ font-size: 5.0cqh per name · raise for bigger names
-        ↳ gap: space between Aya / & / Mahmoud rows (in container units) */
+  /* 2. MAIN NAMES */
   .main-names {
     color: #e5c175;
     font-size: 5.0cqh;
@@ -75,8 +67,7 @@
     display: inline-block;
   }
 
-  /* 3. THE AMPERSAND (&)
-        ↳ font-size: em = relative to .main-names (1.4em = 140% of name size) */
+  /* 3. THE AMPERSAND (&) */
   .amp {
     color: #e5c175;
     font-size: 1.4em;
@@ -88,8 +79,7 @@
     display: inline-block;
   }
 
-  /* 4. DATE TEXT
-        ↳ font-size: 2.0cqh = current · 2.5cqh = larger · 1.5cqh = smaller */
+  /* 4. DATE TEXT */
   .date-header {
     color: #e5c175;
     font-size: 2.0cqh;
@@ -101,8 +91,7 @@
     text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
   }
 
-  /* 5. YEAR
-        ↳ font-size: 4.5cqh = current · raise for a more dramatic year */
+  /* 5. YEAR */
   .date-year {
     color: #e5c175;
     font-size: 4.5cqh;
@@ -236,14 +225,8 @@
    */
   /*
    * ╔══════════════════════════════════════════════════════════╗
-   * ║  CONTENT BOX — pinned to the background image borders   ║
-   * ╠══════════════════════════════════════════════════════════╣
-   * ║  left  & right : 20.3%  →  content width  = 59.4%      ║
-   * ║  top   & bottom: 20.6%  →  content height = 58.8%      ║
-   * ║                                                          ║
-   * ║  To MOVE TEXT:                                           ║
-   * ║  ↑ up   → decrease top  (e.g. 18%)                      ║
-   * ║  ↓ down → increase top  (e.g. 23%)                      ║
+   * ║  CONTENT BOX — left/right: 20.3% · top/bottom: 20.6%   ║
+   * ║  content width = 59.4%  ·  content height = 58.8%      ║
    * ╚══════════════════════════════════════════════════════════╝
    */
   .card-content {
@@ -349,10 +332,10 @@
   }
 
 
-  /* Decorative Rule — width in cqw scales with the card */
+  /* Decorative Rule */
   .rule { 
-    width: 30cqw;
-    max-width: 100%;
+    width: 25%; 
+    max-width: 140px; 
     height: 1px; 
     background: linear-gradient(to right, transparent, #e5c175, transparent); 
     flex-shrink: 0; 
@@ -362,12 +345,7 @@
   
   .sub-text.italic { font-style: italic; }
 
-  /* ─── CTA Buttons ───
-     All sizing in cqh/cqw = scales with the card on every device.
-     ↳ font-size : 1.3cqh  — raise for larger button text
-     ↳ padding   : 1cqh vertical · 2.7cqw horizontal  (−10% from base 3cqw)
-     ↳ max-width : 23.4cqw per button  (−10% from base 26cqw)
-     ↳ gap       : 2cqw between the two buttons */
+  /* ─── CTA Buttons — fully responsive via cqh/cqw ─── */
   .btn-row {
     display: flex;
     gap: 2cqw;
@@ -1041,42 +1019,50 @@
     musicPlaying = !musicPlaying;
   }
 
-  var htmlReady = false;
-  var audioReady = false;
-  var loadingBar = document.getElementById('loadingBar');
+  // ─── Asset Preloader ─────────────────────────────────────────────────────
+  // Tracks: image1, image2, image3, image4, audio (5 assets = 20% each)
+  // The loading screen stays visible until every single asset is ready.
+  // A hard 10-second timeout ensures it always clears even on slow networks.
 
-  function updateProgress() {
-    var progress = (htmlReady ? 50 : 0) + (audioReady ? 50 : 0);
-    loadingBar.style.width = progress + '%';
+  var loadingBar   = document.getElementById('loadingBar');
+  var assetsTotal  = 5;   // 4 images + 1 audio
+  var assetsLoaded = 0;
+
+  function assetReady() {
+    assetsLoaded = Math.min(assetsLoaded + 1, assetsTotal);
+    var pct = Math.round((assetsLoaded / assetsTotal) * 100);
+    loadingBar.style.width = pct + '%';
+    if (assetsLoaded >= assetsTotal) revealInvitation();
   }
 
-  function tryReveal() {
-    if (htmlReady && audioReady) {
-      setTimeout(function() {
-        var screen = document.getElementById('loadingScreen');
-        screen.classList.add('fade-out');
-        setTimeout(function() { screen.style.display = 'none'; }, 850);
-      }, 300);
-    }
+  function revealInvitation() {
+    // Small pause so the bar visually completes to 100% before fading
+    setTimeout(function() {
+      var screen = document.getElementById('loadingScreen');
+      screen.classList.add('fade-out');
+      setTimeout(function() { screen.style.display = 'none'; }, 850);
+    }, 400);
   }
 
-  window.addEventListener('DOMContentLoaded', function() {
-    htmlReady = true;
-    updateProgress();
-    tryReveal();
+  // Preload all 4 card/envelope images
+  ['image1.png', 'image2.png', 'image3.png', 'image4.png'].forEach(function(src) {
+    var img = new Image();
+    img.onload  = assetReady;
+    img.onerror = assetReady; // count failures too so we never get stuck
+    img.src = src;
   });
 
-  music.addEventListener('canplaythrough', function() {
-    audioReady = true;
-    updateProgress();
-    tryReveal();
-  });
+  // Audio ready
+  music.addEventListener('canplaythrough', assetReady, { once: true });
 
+  // Hard fallback: reveal after 10 s no matter what (slow network / blocked audio)
   setTimeout(function() {
-    audioReady = true; htmlReady = true;
-    updateProgress();
-    tryReveal();
-  }, 6000);
+    if (assetsLoaded < assetsTotal) {
+      assetsLoaded = assetsTotal;
+      loadingBar.style.width = '100%';
+      revealInvitation();
+    }
+  }, 10000);
 
   document.addEventListener('click', function autoPlay() {
     if (!musicPlaying) {
