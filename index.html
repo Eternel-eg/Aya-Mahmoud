@@ -550,6 +550,23 @@
       transform-origin: top center;
       margin-bottom: calc((100vw / 565 - 1) * 800px);
     }
+
+    /* ✨ NEW: Boost text sizes specifically for narrow mobile screens ✨ */
+    .sub-text { font-size: 2.5cqh; }
+    .main-names { font-size: 6.5cqh; }
+    .amp { font-size: 1.25em; }
+    .date-header { font-size: 2.5cqh; }
+    .date-year { font-size: 5.5cqh; }
+    .date-time { font-size: 2.4cqh; }
+    .venue-location { font-size: 2.2cqh; }
+    
+    .btn-row { gap: 3cqw; }
+    .btn {
+      font-size: 1.8cqh;
+      padding: 1.2cqh 3cqw;
+      max-width: 38cqw; /* Allow buttons slightly more width */
+    }
+    .btn svg { width: 2cqh; height: 2cqh; }
   }
 
   /*
@@ -656,8 +673,8 @@
         
         <div class="date-time italic">at 7:00 PM</div>
         
-        <!-- New Location Added Here -->
-        <div class="venue-location">Le Méridien Cairo Airport </BR>  Lotus Ballroom</div>
+        <!-- New Location Added Here (fixed non-standard tag) -->
+        <div class="venue-location">Le Méridien Cairo Airport <br> Lotus Ballroom</div>
         
         <div class="rule"></div>
         
@@ -760,7 +777,7 @@
     <div class="wave-bars">
       <span></span><span></span><span></span><span></span>
     </div>
-    <div id="musicTrackName">Mariage d'Amour</div>
+    <div id="musicTrackName">River Flows In You</div>
   </div>
 </div>
 
