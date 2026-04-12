@@ -8,7 +8,7 @@
   ╔══════════════════════════════════════════════════════════════╗
   ║  🔤 FONT GUIDE — swap any family name to change the look    ║
   ║                                                              ║
-  ║  NAMES (main-names):  "Bodoni Moda"  ← ultra-luxury serif   ║
+  ║  NAMES (main-names):  "Parisienne"  ← ultra-luxury serif   ║
   ║     Alternatives:     "Playfair Display"  "Cormorant Garamond" ║
   ║                                                              ║
   ║  AMPERSAND (amp):     "Great Vibes"  ← flowing script       ║
@@ -40,7 +40,7 @@
 
   /* 2. MAIN NAMES
         ↳ font-size: increase/decrease the cqh number (e.g. 7cqh = bigger)
-        ↳ font-family: swap "Bodoni Moda" for any font in the FONT GUIDE above
+        ↳ font-family: swap "Parisienne" for any font in the FONT GUIDE above
         ↳ letter-spacing: 0.12em = tight · 0.2em = airy · 0.05em = very tight */
   .main-names {
     color: #e5c175;
@@ -50,7 +50,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Bodoni Moda', serif;
+    font-family: 'Parisienne', serif;
     text-transform: uppercase;
     font-weight: 400;
     line-height: 1;
@@ -82,7 +82,7 @@
         ↳ swap "Marcellus SC" for "Cinzel" or "Cormorant SC" */
   .date-header {
     color: #e5c175;
-    font-size: 2.5cqh;   /* 2.5% of card height */
+    font-size: 2.5cqh;   /* 2. of card height */
     margin: 0;
     font-family: 'Marcellus SC', serif;
     text-transform: uppercase;
@@ -93,7 +93,7 @@
 
   /* 5. YEAR
         ↳ font-size: 5.2cqh · increase for a more dramatic year display
-        ↳ uses Bodoni Moda to match the names — swap if needed */
+        ↳ uses Parisienne to match the names — swap if needed */
   .date-year {
     color: #e5c175;
     font-size: 5.5cqh;   /* slightly larger for drama */
@@ -170,7 +170,7 @@
   .env-body img { width:100%; height:100%; object-fit:contain; display:block; }
 
   .env-flap {
-    position: absolute; top: 0; left: 0; width: 100%; height: 55%;
+    position: absolute; top: 0; left: 0; width: 100%; height: 5;
     z-index: 5; transform-origin: top center; transform-style: preserve-3d;
     transition: transform 2.2s cubic-bezier(0.25, 0.1, 0.25, 1);
   }
@@ -242,7 +242,7 @@
    * ─────────────────────────────────────────────────
    * Change the `top` value below.
    * • 21% = original position
-   * • 16% = 5% higher  ← current setting
+   * • 14% = 5% higher  ← current setting
    * • 26% = 5% lower
    * The `bottom` value keeps the lower boundary in place.
    * ─────────────────────────────────────────────────
@@ -514,7 +514,7 @@
     content: ''; position: absolute; inset: 9px;
     border: 1px solid rgba(180,148,90,0.18); border-radius: 1px; pointer-events: none;
   }
-  .modal-title { font-family:'Bodoni Moda',serif; font-size: clamp(2rem,8vw,2.6rem); color:#e5c175; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.05em; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
+  .modal-title { font-family:'Parisienne',serif; font-size: clamp(2rem,8vw,2.6rem); color:#e5c175; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.05em; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
   .modal-sub   { font-family:'Cormorant Garamond',serif; font-size: clamp(0.9rem,2.5vw,1.1rem); letter-spacing:.15em; color:#cca550; text-transform:uppercase; margin-bottom:18px; font-weight:500; }
   .modal-rule  { width:70px; height:1px; background:linear-gradient(to right,transparent,#e5c175,transparent); margin:0 auto 20px; }
 
@@ -557,7 +557,7 @@
   .rsvp-thanks { display:none; flex-direction:column; align-items:center; gap:10px; padding:10px 0; }
   .rsvp-thanks.show { display:flex; }
   .rsvp-thanks .ty-icon { font-size:2.5rem; color:#cca550; }
-  .rsvp-thanks .ty-text { font-family:'Bodoni Moda',serif; font-size: clamp(1.6rem,6vw,2.2rem); color:#cca550; text-transform:uppercase; letter-spacing:0.05em; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
+  .rsvp-thanks .ty-text { font-family:'Parisienne',serif; font-size: clamp(1.6rem,6vw,2.2rem); color:#cca550; text-transform:uppercase; letter-spacing:0.05em; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
   .rsvp-thanks .ty-sub  { font-family:'Cormorant Garamond',serif; font-size: clamp(0.9rem,2vw,1rem); letter-spacing:.15em; color:#9a7848; text-transform:uppercase; }
 
   /* ── Mobile adjustments ── */
@@ -588,7 +588,7 @@
     z-index: 99999; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px; transition: opacity 0.8s ease;
   }
   #loadingScreen.fade-out { opacity: 0; pointer-events: none; }
-  .loading-title { font-family: 'Bodoni Moda', serif; font-size: clamp(2.2rem, 8vw, 4rem); text-transform: uppercase; color: #cca550; line-height: 1; letter-spacing: 0.05em; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
+  .loading-title { font-family: 'Parisienne', serif; font-size: clamp(2.2rem, 8vw, 4rem); text-transform: uppercase; color: #cca550; line-height: 1; letter-spacing: 0.05em; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
   .loading-sub { font-family: 'Cormorant Garamond', serif; font-size: clamp(0.9rem, 2.5vw, 1.1rem); letter-spacing: .25em; font-weight: 500; color: #a68440; text-transform: uppercase; }
   .loading-bar-wrap { width: 160px; height: 1px; background: rgba(180,148,90,0.2); border-radius: 2px; overflow: hidden; }
   .loading-bar { height: 100%; width: 0%; background: linear-gradient(to right, #cca550, #f0deba, #cca550); border-radius: 2px; transition: width 0.3s ease; }
