@@ -721,7 +721,8 @@
         <option value="yes">Joyfully accepts</option>
         <option value="no">Regretfully declines</option>
       </select>
-      <input type="number" placeholder="Number of guests" min="1" max="6" id="rsvpGuests">
+      <!-- Added required attribute to the guests input field -->
+      <input type="number" placeholder="Number of guests" min="1" max="6" id="rsvpGuests" required>
       <input type="text" placeholder="Leave a message for the couple 💌" id="rsvpDiet">
       <button class="rsvp-submit" id="submitBtn" onclick="submitRSVP()">Confirm Attendance</button>
     </div>
@@ -965,8 +966,9 @@
     const guests = document.getElementById('rsvpGuests').value;
     const message = document.getElementById('rsvpDiet').value.trim();
 
-    if (!name || !attend) { 
-      alert('Please fill in your name and attendance.'); 
+    // ✨ Added validation specifically for guests to be mandatory ✨
+    if (!name || !attend || !guests) { 
+      alert('Please fill in your name, attendance, and number of guests.'); 
       return; 
     }
 
